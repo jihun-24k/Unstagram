@@ -1,6 +1,7 @@
 package co.kr.datapia.domain;
 
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,6 +27,10 @@ public class Board {
 
     @NotEmpty
     private String time;
+
+    // 삭제되었는지 알려주는 변수를 하나 선언
+    @ColumnDefault("0")
+    private boolean deleted;
 
     public String getInformation() {
         return content + " in "+ time;

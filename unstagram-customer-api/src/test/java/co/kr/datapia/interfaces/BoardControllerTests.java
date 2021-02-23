@@ -129,4 +129,11 @@ public class BoardControllerTests {
                 .andExpect(status().isOk());
     }
 
+    @Test
+    public void deleteBoard() throws Exception{
+        mvc.perform(delete("/board/1004")
+                .contentType(MediaType.APPLICATION_JSON))
+                .andExpect(status().isOk());
+    }
+
 }

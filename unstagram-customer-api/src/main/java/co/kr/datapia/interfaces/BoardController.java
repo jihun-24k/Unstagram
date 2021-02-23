@@ -55,9 +55,9 @@ public class BoardController {
 
         return "{}";
     }
-    @DeleteMapping
+    @DeleteMapping("/board/{boardId}")
     public void delete(
-            @RequestParam Long boardId){
+            @PathVariable Long boardId){
         boardService.delete(boardId);
     }
 }

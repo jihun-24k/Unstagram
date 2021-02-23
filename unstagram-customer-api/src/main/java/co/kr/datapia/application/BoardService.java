@@ -46,7 +46,10 @@ public class BoardService {
         return board;
     }
 
+    // 게시판 아이디로 삭제
+    @Transactional
     public void delete(Long boardId){
         boardRepository.deleteById(boardId);
     }
+
 }
